@@ -1,0 +1,34 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.main {
+  height: 100%;
+  overflow: hidden;
+  background: no-repeat url(../images/main.jpg) center;
+}
+.hello {
+  margin: 100px auto 0;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+  color: #111;
+  font-size: 25px;
+  font-family: YouYuan;
+  background-color: rgb(255, 255, 255, 0.3);
+}
+.introductory {
+  margin: 50px auto;
+  width: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #111;
+  font-size: 20px;
+  font-family: YouYuan;
+  background-color: rgb(255, 255, 255, 0.3);
+}
+.link {
+  text-align: center;
+}
