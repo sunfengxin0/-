@@ -27,6 +27,8 @@ app.post("/register", require("./route/register"))
 // 实现新增todolistitem
 app.post("/newtodolistitem", require("./route/newtodolistitem"))
 
+app.delete("/deletetodolistitem", require("./route/deletetodolistitem"))
+
 // app.get("/test", (req, res, next) => {
 //   console.log(req.session.username)
 // })
