@@ -18,9 +18,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  toDoList: {
-    type: String,
-  },
+  toDoList: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Todolistitems",
+    },
+  ],
 })
 
 const User = mongoose.model("User", userSchema)
@@ -30,7 +33,7 @@ async function createUser() {
   const pass = await bcrypt.hash("123456", salt)
   const user = await User.create({
     username: "sunfengxin",
-    toDoList: "",
+    toDoList: [],
     password: pass,
     role: "admin",
   })

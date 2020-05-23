@@ -8,7 +8,7 @@ module.exports = async (req, res) => {
   if (!req.role) {
     userInfo.role = "normal"
   }
-  userInfo.toDoList = ""
+  userInfo.toDoList = []
 
   try {
     await validateUser(req.body)

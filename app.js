@@ -22,7 +22,10 @@ app.use(session({ secret: "瞎几把写" }))
 app.use(bodyPaser.urlencoded({ extended: false }))
 //实现登录的接口
 app.post("/login", require("./route/login"))
+//实现注册的接口
 app.post("/register", require("./route/register"))
+// 实现新增todolistitem
+app.post("/newtodolistitem", require("./route/newtodolistitem"))
 
 // app.get("/test", (req, res, next) => {
 //   console.log(req.session.username)
