@@ -20,8 +20,9 @@ app.use(session({ secret: "瞎几把写" }))
 
 //使用body-parser处理post
 app.use(bodyPaser.urlencoded({ extended: false }))
-
+//实现登录的接口
 app.post("/login", require("./route/login"))
+app.post("/register", require("./route/register"))
 
 // app.get("/test", (req, res, next) => {
 //   console.log(req.session.username)

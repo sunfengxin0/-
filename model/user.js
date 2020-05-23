@@ -20,7 +20,6 @@ const userSchema = new mongoose.Schema({
   },
   toDoList: {
     type: String,
-    required: false,
   },
 })
 
@@ -53,10 +52,6 @@ const validateUser = (user) => {
       .max(12)
       .required()
       .error(new Error("用户名不符合验证规则")),
-    email: Joi.string()
-      .email()
-      .required()
-      .error(new Error("邮箱格式不符合要求")),
     password: Joi.string()
       .regex(/^[a-zA-Z0-9]{3,30}$/)
       .required()
@@ -65,7 +60,7 @@ const validateUser = (user) => {
       .valid("normal", "admin")
       .required()
       .error(new Error("角色值非法")),
-    state: Joi.number().valid(0, 1).required().error(new Error("状态值非法")),
+    toDoList: Joi.string().allow(""),
   }
 
   // 实施验证
