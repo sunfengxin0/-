@@ -21,6 +21,12 @@ app.use(session({ secret: "瞎几把写" }))
 //使用body-parser处理post
 app.use(bodyPaser.urlencoded({ extended: false }))
 
+app.post("/login", require("./route/login"))
+
+// app.get("/test", (req, res, next) => {
+//   console.log(req.session.username)
+// })
+
 app.use((req, res) => {
   res.redirect("/err404.html")
 })
