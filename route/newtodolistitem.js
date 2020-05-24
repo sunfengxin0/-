@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
   //   创建待办事项条目
   let items = await Todolistitems.create({
     item: item,
-    status: status,
+    status: Boolean(status),
   })
   //   搜索创建该条目的用户
   let users = await User.find({ _id: uid })
@@ -15,7 +15,7 @@ module.exports = async (req, res) => {
   User.updateOne({ _id: uid }, users[0])
     .then((result) =>
       res.json({
-        data: {},
+        data: { itemid: items._id },
         meta: {
           msg: "新增待办事项成功",
           status: 200,

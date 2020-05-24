@@ -26,8 +26,12 @@ app.post("/login", require("./route/login"))
 app.post("/register", require("./route/register"))
 // 实现新增todolistitem
 app.post("/newtodolistitem", require("./route/newtodolistitem"))
-
+// 删除接口
 app.delete("/deletetodolistitem", require("./route/deletetodolistitem"))
+
+app.put("/modifytodolistitem", require("./route/modifytodolistitem"))
+
+app.get("/gettodolist", require("./route/gettodolist"))
 
 // app.get("/test", (req, res, next) => {
 //   console.log(req.session.username)
