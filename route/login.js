@@ -2,6 +2,8 @@ const bcrypt = require("bcryptjs")
 const { User } = require("../model/user")
 module.exports = async (req, res) => {
   const { username, password } = req.body
+  console.log(res.body)
+
   // 定义错误信息
   const err = {
     data: {},
@@ -10,7 +12,6 @@ module.exports = async (req, res) => {
       status: 303,
     },
   }
-  console.log(username + password)
   //如果输入为空直接返回错误信息
   if (username.trim().length == 0 || password.trim().length == 0)
     return res.status(303).json(err)

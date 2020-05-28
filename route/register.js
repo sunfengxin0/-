@@ -5,6 +5,8 @@ const bcrypt = require("bcryptjs")
 
 module.exports = async (req, res) => {
   const userInfo = req.body
+  console.log(userInfo)
+
   if (!req.role) {
     userInfo.role = "normal"
   }
@@ -28,10 +30,11 @@ module.exports = async (req, res) => {
     return false
   }
   let user = await User.findOne({ username: userInfo.username })
+  console.log(user)
+
   // 如果用户已经存在 邮箱地址已经被别人占用
   if (user) {
     // 重定向回用户添加页面
-    // return res.redirect(`/admin/user-edit?message=邮箱地址已经被占用`);
     res.status(300).json({
       data: {},
       meta: {
@@ -51,7 +54,7 @@ module.exports = async (req, res) => {
 
   // 返回成功创建的结果
   res.status(200).json({
-    data: "123",
+    data: "",
     meta: {
       msg: "成功创建用户",
       status: 200,

@@ -63,7 +63,7 @@ const validateUser = (user) => {
       .valid("normal", "admin")
       .required()
       .error(new Error("角色值非法")),
-    toDoList: Joi.string().allow(""),
+    toDoList: Joi.allow(""),
   }
 
   // 实施验证
